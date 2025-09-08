@@ -1,5 +1,8 @@
 # Resposta Indicium - Cientista de Dados
-...
+Este projeto foi desenvolvido como parte do processo seletivo do programa
+Lighthouse da Indicium. O objetivo é realizar uma análise completa de dados
+cinematográficos do IMDB para orientar o estúdio fictício "PProductions" sobre
+qual tipo de filme deve ser o próximo a ser desenvolvido.
 
 # 2a. Qual filme você recomendaria para uma pessoa que você não conhece?
 Eu indicaria o filme com a maior nota acompanhado do maior público, isto é, com
@@ -22,10 +25,24 @@ inferir o gênero a partir da coluna overview, como exemplificado pela função
 `predict_genre_by_overview`. 
 
 # 3. Explique como você faria a previsão da nota do imdb a partir dos dados. Quais variáveis e/ou suas transformações você utilizou e por quê? Qual tipo de problema estamos resolvendo (regressão, classificação)? Qual modelo melhor se aproxima dos dados e quais seus prós e contras? Qual medida de performance do modelo foi escolhida e por quê?
-Estamos resolvendo um problema de **regressão**, prevendo a nota do IMDB a
-partir de variáveis como ano de lançamento, tempo de duração, metascore, número
-de votos, bilheteria, além de variáveis categóricas como gênero e certificado.
-Testamos diferentes modelos, sendo que métodos baseados em árvores (Random
-Forest ou Gradient Boosting) se ajustam melhor aos dados por capturarem relações
-não lineares. A métrica escolhida foi o RMSE, pois é mais sensível a grandes
-erros e nos dá uma boa noção do desvio médio em relação à nota real.
+Prever a nota do IMDB é um problema de **regressão**. Para descobrir qual o
+melhor modelo e quais seus prós e contras, testei dois modelos: **Regressão Linear** 
+e **Random Forest**, o resultado obtido geramente é o seguinte:
+
+Modelo: Linear Regression
+RMSE: 0.2084
+MAE: 0.1688
+R2: 0.3383
+
+Modelo: Random Forest
+RMSE: 0.1936
+MAE: 0.1477
+R2: 0.4288
+
+Para o filme `The Shawshank Redemption`, a previsão obtida por cada modelo é a
+seguinte:
+
+Linear Regression: 9.25
+Random Forest: 8.79
+
+
